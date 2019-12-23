@@ -1,0 +1,24 @@
+<div>
+  <nav class="headers navbar-inverse ">
+    <div class="container-fluid firstheader">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">CHARLOTTE CONNECTS</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/newconnection">Organize a new meetup</a></li>
+            <% if(mySession.theUser){ %>
+              <li><a href="/profile/savedconnections">MyConnections</a></li>
+              <li><a href="/profile/savedconnections?action=signout">Sign Out</a></li>
+            <% }else{ %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signUp">Sign Up</a></li>
+            <% } %>
+
+          </ul>
+    </div>
+
+    <% include ./navigation %>
+
+  </nav>
+
+</div>

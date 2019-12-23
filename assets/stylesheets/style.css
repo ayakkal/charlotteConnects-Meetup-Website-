@@ -1,0 +1,248 @@
+article,section,header,nav{
+ display: block;
+}
+
+html,h1,h2,h3,ul,a,article,aside,header,main,nav,section,li {
+ padding: 0;
+ margin: 0;
+}
+.pads{
+  padding-top: 120px;
+}
+main{
+  width:960px;
+  padding-left: 20px;
+}
+a{
+  font-weight: 800;
+}
+.nonlink{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  font-weight: 800;
+  color:#9d9d9d;
+}
+.nonlinkfooter{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 50px;
+  line-height: 20px;
+  font-weight: 800;
+  font-size: 15px;
+  color:#9d9d9d;
+}
+.welcomeheading{
+    padding-left:0%;
+    padding-bottom:4%;
+    font-size: 35px;
+    color:black;
+}
+.introdetails1{
+  font-size: 25px;
+  padding-bottom: 5%;
+  color:black;
+}
+.introquote{
+  font-size: 40px;
+  padding-left: 7%;
+  font-family: URW Chancey L, cursive;
+  color: black;
+}
+h2{
+  padding-left: 40%;
+}
+h3{
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 0%;
+  font-size: 30px;
+  font-weight: bold;
+}
+h4{
+  font-family: URW Chancey L,cursive;
+  color:white;
+}
+p{
+  padding-left: 0px;
+  color: white;
+  font-size: 20px;
+}
+.eventdetails{
+  margin-top: 1%;
+  margin-left:10%;
+  padding-left: 7%;
+  font-size: 16px;
+  color:white;
+  font-family: URW Chancey L,cursive;
+}
+.eventheading{
+  padding-bottom: 4%;
+}
+.eventdescription{
+  color:white;
+}
+.Yes{
+  margin-right: 2%;
+  background-color: #4CAF50;
+
+}
+.Yes:hover{
+  background-color: #46a049;
+}
+.No{
+  margin-right: 2%;
+  background-color: #f44336;
+}
+.No:hover{
+  background-color: #da190b;
+}
+.Update{
+  float:left;
+  padding-right: 5%;
+  color:black;
+}
+.Delete{
+  color:black;
+  float:right;
+}
+.updatedelete{
+  width: 20%;
+}
+th{
+  font-size: 20px;
+  color: white;
+}
+td{
+  color: white;
+}
+.Maybe {
+  background-color: #ff9800;
+}
+.Maybe:hover{
+  background-color: #e68a00;
+}
+.headers{
+  position: fixed;
+  width: 100%;
+  padding-left: 12%;
+  padding-right:12%;
+  z-index: 1030;
+}
+.footers{
+  padding-left: 12%;
+  padding-right:12%;
+}
+.firstheader{
+  border-style: solid;
+  border-color: #222 #222 white #222;
+}
+.backgrnd{
+  background-image: url(../images/charlotteuptown.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80%
+}
+.headerbackground{
+  background-image: url(images/color.jpg);
+}
+footer{
+  display:block;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+}
+.firstcategory{
+  padding-left: 5%;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  padding-right: 10%;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.5);
+}
+.maincontent{
+  background-color: rgba(255,255,255, 0.4);
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 8%;
+  padding-bottom: 30%;
+}
+.maincontent1{
+  background-color: rgba(0,0,0,0.1);
+}
+.maincontext{
+  background-color: rgba(255,255,255, 0.4);
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 14%;
+  padding-bottom: 25%;
+}
+.newconnectionContext{
+  background-color: rgba(255,255,255, 0.4);
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 9%;
+  padding-bottom: 25%;
+}
+.loginForm{
+  background-color: rgba(255,255,255, 0.4);
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 9%;
+  padding-bottom: 25%;
+}
+.username{
+  margin: 5% 0% 5%;
+  border-radius: 5%;
+}
+.password{
+  margin: 5% 0% 5%;
+  border-radius: 5%;
+}
+.loginbutton{
+  background-color:#404040;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.editDelete{
+
+  padding-top: 5%;
+
+
+}
+.loginerrmessage{
+
+  color:red;
+
+}
+
+.loginheading{
+
+  padding-left: 25%;
+
+}
+
+.eventcontent{
+  padding-left: 5%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.6);
+}
+.connectionstable{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 20%;
+}
+.savedheading{
+  padding-bottom: 10px;
+}

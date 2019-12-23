@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Charlotte Connects</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/bootstrap.css">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/style.css">
+ <script src="../assets/js/jquery.js"></script>
+ <script src="../assets/js/bootstrap.js"></script>
+</head>
+<body>
+
+    <% include ./partials/header.ejs %>
+
+
+    <div class="backgrnd">
+      <div class="maincontent">
+          <div class="container-fluid bg-1 ">
+            <h3 class="margin eventheading"><%= connection.connectionTopic %></h3>
+          </div>
+          <div class="row firstcategory ">
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="<%=connection.imageUrl%>" class="img-rounded connectionimage" width="120" height="120" alt="Image">
+                </div>
+                <div class="col-sm-9">
+                  <p class="eventdetails">
+                    Hosted by <%= user.firstName %> <br> <%= connection.date %> <br> <%= connection.time %> <br><%= connection.place %>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <h4>Are You Going? 33 people going</h4>
+              <% let common = "/profile/savedconnections?action=save&connectionID="+connection.connectionID %>
+              <form method="post">
+                <button type="submit" formaction="<%= common %>&rsvp=Yes" class="btn Yes">Yes</button>
+                <input type="hidden" name="viewConnections" value="<%= connection.connectionID %>">
+                <button type="submit" formaction="<%= common %>&rsvp=No" class="btn No">No</button>
+                <button type="submit" formaction="<%= common %>&rsvp=Maybe" class="btn Maybe">Maybe</button>
+              </form>
+            </div>
+          </div>
+            <div>
+              <div>
+                <h3 class="margin details">Details</h3>
+              </div>
+              <div class="eventcontent">
+                  <p class="eventdescription"><%= connection.connectionDetails %></p>
+              </div>
+            </div>
+            <% if(mySession.theUser){ 
+               if(mySession.theUser.userID == connection.userID){ %>
+                <div class ="editDelete">
+                  <div class="col-sm-6">
+                    <% let url1 = "/connection?action=delete&connectionID="+connection.connectionID %>
+                    <form method="post">
+                      <button type="submit" formaction="<%= url1 %>" class="btn Delete">Delete</button>
+                    </form>  
+                  </div>
+                  <div class="col-sm-6">
+                    <% let url2 = "/connection?action=edit&connectionID="+connection.connectionID %>
+                    <form method="post">
+                      <button type="submit" formaction="<%= url2 %>" class="btn Edit">Edit</button>
+                    </form>  
+                  </div>
+                </div>  
+              <% }} %>  
+          </div>
+        </div>
+
+      <% include ./partials/footer %>
+
+</body>
+</html>

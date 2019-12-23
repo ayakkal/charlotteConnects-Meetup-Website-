@@ -1,0 +1,11 @@
+
+    <div class="container-fluid firstheader">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/connections">Meet Up's</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if(mySession.theUser){ %>
+          <li class="nonlinkfooter">Welcome <%= mySession.theUser.firstName %></li>
+        <% } %>
+      </ul> 
+    </div>

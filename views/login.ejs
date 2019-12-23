@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Charlotte Connects</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/bootstrap.css">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/style.css">
+ <script src="../assets/js/jquery.js"></script>
+ <script src="../assets/js/bootstrap.js"></script>
+</head>
+<body>
+  <div class="full">
+
+    <% include ./partials/header %>
+
+
+    <div class="backgrnd">
+        <div class="loginForm">
+           <div class="container-fluid bg-1 pads loginForm">
+              <h1 class="loginheading">LOGIN FORM</h1><br>
+              <% if(errrs){ 
+                  errrs.forEach(error =>{ %>
+                    <p class="loginerrmessage"><%= error.msg %></p>
+                  <% })} %>
+             <form action="/login?action=signIn" method="POST">
+                <div class="username">
+                    <label><b>Username :</b></label>
+                    <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+                </div>
+                <div class="password">
+                    <label><b>Password :</b></label>
+                    <input type="password" class="form-control" placeholder="Enter Password" name="password" required>  
+                </div>
+                <button type="submit" class="loginbutton">Login</button>
+              </form>
+            </div>
+        </div>    
+    </div>
+
+      <% include ./partials/footer %>
+
+  </div>
+</body>
+</html>

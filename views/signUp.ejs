@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Charlotte Connects</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/bootstrap.css">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/style.css">
+ <script src="../assets/js/jquery.js"></script>
+ <script src="../assets/js/bootstrap.js"></script>
+</head>
+<body>
+  <div class="full">
+
+    <% include ./partials/header %>
+
+
+
+    <div class="backgrnd">
+      <div class="maincontent1">
+         <div class="container-fluid bg-1 pads newconnectionContext">
+            <p class="loginerrmessage"></p>
+              <% errrs.forEach(error => { %> 
+                  <p class="loginerrmessage"><%= "Error at "+error.param +": "+error.msg %></p>
+                <% }) %>
+              <form action="/signUp" method="POST">  
+                  <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter First Name" name="firstName" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" name="lastName" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Username:</label>
+                    <input type="text" class="form-control" id="userName" placeholder="Enter UserName" name="userName" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm Password:</label>
+                    <input type="Password" class="form-control" id="confirmPassword" placeholder="Re Enter Password" name="confirmPassword" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                  </div>
+
+                  <button type="submit" class="btn btn-default">Create Account</button> 
+              </form>
+          </div>
+        </div>
+      </div>
+
+      <% include ./partials/footer %>
+
+
+  </div>
+</body>
+</html>

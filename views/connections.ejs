@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Charlotte Connects</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/bootstrap.css">
+<link rel="stylesheet" type='text/css' href="../assets/stylesheets/style.css">
+ <script src="../assets/js/jquery.js"></script>
+ <script src="../assets/js/bootstrap.js"></script>
+</head>
+<body>
+
+    <div class="full">
+      <% include ./partials/header %>
+
+
+    <div class="backgrnd">
+      <div class="maincontent">
+        <div class="categories">
+          <% categories.forEach(category => { %>
+            <div class="container-fluid bg-1 text-center first ">
+              <h3 class="margin"><%= category %></h3>
+            </div>
+            <div class="row sport firstcategory">
+            <% var socialConn = connections.filter(function filter(connection){return connection.connectionCategory === category});
+                for(var i=0; i< socialConn.length;i++){ %>
+
+
+                    <div class="col-sm-4">
+                      <a href="/connections?connectionID=<%= socialConn[i].connectionID %>">
+                        <img src="<%=socialConn[i].imageUrl %>" class="img-rounded img-thumbnail connectionsimage" alt="Image">
+                        <p><%=socialConn[i].connectionTopic %></p>
+                      </a>
+                    </div>
+
+
+                <% }
+                %>
+            </div>
+          <% }) %>
+
+          <br>
+        </div>
+      </div>
+
+    <% include ./partials/footer %>
+  </div>
+</div>
+  </body>
+</html>

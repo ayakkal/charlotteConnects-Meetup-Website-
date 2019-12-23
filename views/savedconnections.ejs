@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Charlotte Connects</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type='text/css' href="../assets/stylesheets/bootstrap.css">
+  <link rel="stylesheet" type='text/css' href="../assets/stylesheets/style.css">
+   <script src="jquery.js"></script>
+   <script src="bootstrap.js"></script>
+</head>
+<body>
+  <div class="full">
+    <% include ./partials/header %>
+
+
+    </div>
+      <div class="backgrnd">
+        <div class="maincontent">
+          <br><br>
+          <div>
+            <h3 class="savedheading"><%= user.firstName %> Connections</h3>
+          </div>
+            <table class="table connectionstable">
+              <thead>
+                <tr>
+                <th>Connections</th>
+                <th>Category</th>
+                <th>Going?</th>
+                <th>Make Changes</th>
+              </tr>
+              </thead>
+              <tbody>
+
+                <% userConnList.forEach(userConn => {%>
+
+                    <tr>
+                      <td><%= userConn._connection.connectionTopic %></td>
+                      <td><%= userConn._connection.connectionCategory %></td>
+                      <td><%= userConn._rsvp %></td>
+                      <td class="updatedelete">
+                        <form method="post" action="/profile/savedconnections?action=updateProfile&connectionID=<%= userConn._connection.connectionID %>">
+                          <input type="hidden" name="viewConnections" value="<%= userConnList.map( userConn =>{return userConn._connection.connectionID}) %>">
+                          <button type="submit" class="btn Update">Update</button>
+                        </form>
+                        <form method="post" action="/profile/savedconnections?action=delete&connectionID=<%= userConn._connection.connectionID %>">
+                          <input type="hidden" name="viewConnections" value="<%= userConnList.map( userConn =>{return userConn._connection.connectionID}) %>">
+                          <button type="submit" class="btn Delete">Delete</button>
+                        </form>
+                      </td>
+                    </tr>
+
+                <% }) %>
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+      <% include ./partials/footer %>
+
+</body>
+</html>

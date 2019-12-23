@@ -1,0 +1,23 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "NBAD",
+  "main": "app.js",
+  "dependencies": {
+    "arraylist": "^0.1.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.3.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.11",
+    "nodemon": "^1.19.3",
+    "password-hash": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akhil",
+  "license": "ISC"
+}
